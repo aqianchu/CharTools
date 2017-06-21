@@ -20,6 +20,8 @@ public class CharHelpTool {
 	private JButton btnUrl;
 	private JButton btnUnicode;
 	private JButton button;
+	private JButton button_1;
+	private JButton btnurl;
 
 	/**
 	 * Launch the application.
@@ -85,6 +87,23 @@ public class CharHelpTool {
 			}
 		});
 		frame.getContentPane().add(button);
+		
+		button_1 = new JButton("\u5B57\u7B26\u4E32\u662F\u5426\u76F8\u7B49");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		frame.getContentPane().add(button_1);
+		
+		btnurl = new JButton("\u4E91\u63A7URL\u89E3\u5BC6");
+		btnurl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TwoDialog dialog = new TwoDialog(4);
+				dialog.show();
+			}
+		});
+		frame.getContentPane().add(btnurl);
 		btnUnicode.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TwoDialog dialog = new TwoDialog(2);

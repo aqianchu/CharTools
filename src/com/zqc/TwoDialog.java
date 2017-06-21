@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import com.zqc.utils.AESUtils;
 import com.zqc.utils.TextUtils;
 import com.zqc.utils.UnicodeUtils;
 
@@ -71,6 +72,9 @@ public class TwoDialog extends JDialog {
 								e1.printStackTrace();
 							}
 							break;
+						case 4:
+							string = AESUtils.encode(str.getBytes());
+							break;
 						default:
 							break;
 						}
@@ -111,6 +115,9 @@ public class TwoDialog extends JDialog {
 							e1.printStackTrace();
 						}
 						break;
+					case 4:
+						string = AESUtils.decode(str);
+						break;
 					default:
 						break;
 					}
@@ -122,12 +129,12 @@ public class TwoDialog extends JDialog {
 		contentPanel.add(button);
 
 		textArea = new JTextArea();
-		textArea.setBounds(10, 10, 242, 253);
+		textArea.setBounds(10, 10, 247, 253);
 		contentPanel.add(textArea);
 		textArea.setColumns(10);
 
 		textArea1 = new JTextArea();
-		textArea1.setBounds(314, 10, 283, 253);
+		textArea1.setBounds(321, 10, 283, 253);
 		contentPanel.add(textArea1);
 
 		JButton button_1 = new JButton("<>");
@@ -139,7 +146,7 @@ public class TwoDialog extends JDialog {
 				textArea1.setText(str1);
 			}
 		});
-		button_1.setBounds(251, 120, 53, 32);
+		button_1.setBounds(262, 120, 53, 32);
 		contentPanel.add(button_1);
 		{
 			JPanel buttonPane = new JPanel();
